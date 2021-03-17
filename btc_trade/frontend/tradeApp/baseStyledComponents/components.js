@@ -51,4 +51,4 @@ const BaseInput = styled.input`
     box-sizing: border-box;
 `
 
-export { BaseDiv, BaseParagraph, BaseSpan, BaseFlexDiv, BaseInlineFlexDiv, BaseInput}
+export { BaseDiv, BaseSpan, BaseFlexDiv, BaseInlineFlexDiv, BaseInput}
