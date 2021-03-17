@@ -4,25 +4,22 @@ from rest_framework.viewsets import ModelViewSet
 from accounts.models import UserProfile
 from payments.models import CryptoCurrencyRate
 from trade.models import Trade
-from trade.serializers import TradeSerializer, TradeListSerializer
+from trade.serializers import TradeCreateUpdateSerializer, TradeListSerializer, TradeDetailsSerializer
 
 
 class TradeViewSet(ModelViewSet):
-    serializer_class = TradeSerializer
-
     def get_queryset(self):
         return Trade.objects.all()
 
     def get_serializer_class(self):
-        action_serializer_mapping = {
-            'create': TradeSerializer,
-            'list': TradeListSerializer
-        }
+        if self.action in ['list']:
+            return TradeListSerializer
+        if self.action in ['retrieve']:
+            return TradeDetailsSerializer
 
-        return action_serializer_mapping.get(self.action)
+        return TradeCreateUpdateSerializer
 
     def create(self, request, *args, **kwargs):
-        print('HERE!!!')
         default_crypto_currency = CryptoCurrencyRate.objects.first()
         defaut_buyer = UserProfile.objects.first()
         data = {
@@ -33,8 +30,10 @@ class TradeViewSet(ModelViewSet):
         }
 
         serializer = self.get_serializer_class()(data=data)
+        print(serializer)
         serializer.is_valid(raise_exception=True)
 
         serializer.save()
 
         return Response(serializer.data)
+

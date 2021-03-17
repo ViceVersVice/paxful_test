@@ -3,7 +3,7 @@ from rest_framework import serializers
 from trade.models import Trade
 
 
-class TradeListSerializer(serializers.ModelSerializer):
+class BaseTradeDetailsSerializer(serializers.ModelSerializer):
     payment_method = serializers.SerializerMethodField()
     crypto_currency = serializers.SerializerMethodField()
     status = serializers.SerializerMethodField()
@@ -12,7 +12,7 @@ class TradeListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Trade
-        fields = ('amount', 'payment_method', 'crypto_currency', 'status', 'buyer', 'buyer_reputation',)
+        fields = ('id', 'amount', 'payment_method', 'crypto_currency', 'status', 'buyer', 'buyer_reputation',)
 
     def get_payment_method(self, obj):
         return obj.get_payment_method_display()
@@ -30,7 +30,30 @@ class TradeListSerializer(serializers.ModelSerializer):
         return obj.crypto_currency.get_type_display()
 
 
-class TradeSerializer(serializers.ModelSerializer):
+class TradeListSerializer(BaseTradeDetailsSerializer):
+    pass
+
+
+class TradeDetailsSerializer(BaseTradeDetailsSerializer):
+    crypto_currency_amount = serializers.SerializerMethodField()
+
+    class Meta(BaseTradeDetailsSerializer.Meta):
+        model = Trade
+        fields = BaseTradeDetailsSerializer.Meta.fields + ('crypto_currency_amount', )
+
+    def get_crypto_currency_amount(self, obj):
+        """Returns amount in Satoshi"""
+        payment_method_to_crypto = {
+            Trade.USD: 'usd',
+            Trade.EUR: 'eur'
+        }
+
+        exchange_rate = getattr(obj.crypto_currency, payment_method_to_crypto.get(obj.payment_method))
+
+        return round(obj.amount / exchange_rate, 8)
+
+
+class TradeCreateUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trade
         fields = ('amount', 'payment_method', 'crypto_currency', 'buyer')
