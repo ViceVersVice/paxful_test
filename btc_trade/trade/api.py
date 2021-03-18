@@ -23,7 +23,7 @@ class TradeViewSet(ModelViewSet):
     def create(self, request, *args, **kwargs):
         update_currency_rate()
 
-        # Default data is taken as only amount is required
+        # Default data is taken, as only amount is required in request
         default_cryptocurrency = CryptoCurrency.objects.first()
         defaut_buyer = UserProfile.objects.first()
 

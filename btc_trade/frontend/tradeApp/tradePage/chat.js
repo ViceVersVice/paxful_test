@@ -45,7 +45,6 @@ const Chat = (props) => {
     const chatContainerProps = {
         padding: '2% 2% 2% 2%',
         width: '100%',
-        borderTop: '1px solid black',
         flexDirection: 'column',
     }
 

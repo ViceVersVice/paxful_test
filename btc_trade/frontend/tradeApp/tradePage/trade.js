@@ -44,26 +44,42 @@ const TradeDetailInfo = (props) => {
         cursor: 'pointer',
         justifyContent: 'space-around',
         width: '100%',
-        padding: '2% 20% 2% 2%'
+        padding: '0% 2% 0% 2%',
+        flexDirection: 'column'
+    }
+
+    const itemRowProps = {
+        justifyContent: 'space-between',
+        width: '100%',
+        borderBottom: '2px solid grey',
+        padding: '1%'
     }
     
     return (
         <ThemeProvider theme={{ fontSize: '30px'}}>
             <BaseInlineFlexDiv {...tradeDetailsContainerProps}>
-                <BaseInlineFlexDiv flexDirection={'column'} justifyContent={'space-around'} key={1}>
+                <BaseInlineFlexDiv background={'#dce6f5'} {...itemRowProps}>
                     <BaseSpan><strong>Fiat amount:</strong></BaseSpan>
-                    <BaseSpan><strong>Cryptocurrency amount:</strong></BaseSpan>
-                    <BaseSpan><strong>Payment method:</strong></BaseSpan>
-                    <BaseSpan><strong>Payment status:</strong></BaseSpan>
-                    <BaseSpan><strong>Buyer:</strong></BaseSpan>
-                    <BaseSpan><strong>Buyer reputation:</strong></BaseSpan>
-                </BaseInlineFlexDiv>
-                <BaseInlineFlexDiv flexDirection={'column'} justifyContent={'space-around'} key={2}>
                     <BaseSpan>{data.amount}</BaseSpan>
+                </BaseInlineFlexDiv>
+                <BaseInlineFlexDiv background={'#e4e6eb'} {...itemRowProps}>
+                    <BaseSpan><strong>Cryptocurrency amount:</strong></BaseSpan>
                     <BaseSpan>{`${data.cryptocurrency_amount} ${data.cryptocurrency}`}</BaseSpan>
+                </BaseInlineFlexDiv>
+                <BaseInlineFlexDiv background={'#dce6f5'} {...itemRowProps}>
+                    <BaseSpan><strong>Payment method:</strong></BaseSpan>
                     <BaseSpan>{data.payment_method}</BaseSpan>
+                </BaseInlineFlexDiv>
+                <BaseInlineFlexDiv background={'#e4e6eb'} {...itemRowProps}>
+                    <BaseSpan><strong>Payment status:</strong></BaseSpan>
                     <BaseSpan>{data.status}</BaseSpan>
+                </BaseInlineFlexDiv>
+                <BaseInlineFlexDiv background={'#dce6f5'} {...itemRowProps}>
+                    <BaseSpan><strong>Buyer:</strong></BaseSpan>
                     <BaseSpan>{data.buyer}</BaseSpan>
+                </BaseInlineFlexDiv>
+                <BaseInlineFlexDiv background={'#e4e6eb'} {...itemRowProps}>
+                    <BaseSpan><strong>Buyer reputation:</strong></BaseSpan>
                     <BaseSpan>{data.buyer_reputation}</BaseSpan>
                 </BaseInlineFlexDiv>
             </BaseInlineFlexDiv>

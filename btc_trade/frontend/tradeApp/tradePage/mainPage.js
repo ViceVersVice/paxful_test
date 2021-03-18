@@ -29,9 +29,15 @@ const MainPage = () => {
                     <TradeList getTradeInfoDetailsAction={getTradeInfoDetailsAction}></TradeList>
                 </BaseInlineFlexDiv>
                 <BaseInlineFlexDiv flex={'3'} flexDirection={'column'} key={2}>
-                    <BaseInlineFlexDiv flex={'1'}>
-                        {tradeDetailsData ? <TradeDetailInfo data={tradeDetailsData}></TradeDetailInfo> : null}
-                    </BaseInlineFlexDiv>
+                        {
+                            tradeDetailsData ? 
+                            <BaseInlineFlexDiv flex={'1'}>
+                                <TradeDetailInfo data={tradeDetailsData}></TradeDetailInfo>
+                            </BaseInlineFlexDiv> : 
+                            <BaseInlineFlexDiv flex={'1'} alignItems={'center'} justifyContent={'center'}>
+                                <BaseInlineFlexDiv>Nothing selected</BaseInlineFlexDiv>
+                            </BaseInlineFlexDiv>
+                        }
                     <BaseInlineFlexDiv flex={'1'}>
                         <Chat showMessages={Boolean(tradeDetailsData)}></Chat>
                     </BaseInlineFlexDiv>
