@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { BaseDiv, BaseFlexDiv, BaseInlineFlexDiv } from "../baseStyledComponents/components"
+import { BaseFlexDiv, BaseInlineFlexDiv } from "../baseStyledComponents/components"
 import { TradeListItem } from './trade.js'
 
 

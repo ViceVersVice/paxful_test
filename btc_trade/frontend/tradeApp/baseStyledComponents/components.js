@@ -1,6 +1,6 @@
 import React from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import {backgroundCss, borderedCss, marginCss, flexBoxCss, fontStyleCss, paddingCss, sizeCss, cursorCss, fitCss} from './css.js';
+import styled from 'styled-components';
+import {backgroundCss, borderedCss, marginCss, flexBoxCss, fontStyleCss, paddingCss, sizeCss, cursorCss, pointerEventsCss} from './css.js';
 
 
 const BaseDiv = styled.div`
@@ -12,6 +12,7 @@ const BaseDiv = styled.div`
     ${sizeCss};
     ${fontStyleCss};
     ${cursorCss};
+    ${pointerEventsCss};
 `
 
 const BaseFlexDiv = styled(BaseDiv)`
@@ -27,18 +28,7 @@ const BaseSpan = styled.span`
     ${borderedCss};
     ${fontStyleCss};
     ${marginCss};
-`
-
-
-const BaseIcon = styled.i`
-    ${marginCss};
-    ${backgroundCss};
-    ${paddingCss};
-    ${flexBoxCss};
-    ${borderedCss};
-    ${sizeCss};
-    ${fontStyleCss};
-    ${cursorCss};
+    ${pointerEventsCss};
 `
 
 const BaseInput = styled.input`
@@ -48,6 +38,7 @@ const BaseInput = styled.input`
     ${flexBoxCss};
     ${borderedCss};
     ${sizeCss};
+    ${pointerEventsCss};
     box-sizing: border-box;
 `
 

@@ -2,8 +2,8 @@ import { css } from 'styled-components';
 
 
 const backgroundCss = css`
-    background-color: ${props => props.backgroundColor};
-    background: ${props => props.background};
+    background-color: ${props => props.backgroundColor || props.theme.backgroundColor};
+    background: ${props => props.background || props.theme.background};
 `
 
 const fontStyleCss = css`
@@ -76,5 +76,9 @@ const cursorCss = css`
     cursor: ${props => props.cursor}
 `
 
+const pointerEventsCss = css`
+    pointer-events: ${props => props.pointerEvents || props.theme.pointerEvents || 'auto'}
+`
 
-export {backgroundCss, borderedCss, marginCss, flexBoxCss, sizeCss, fontStyleCss, paddingCss, cursorCss, fitCss};
+
+export {backgroundCss, borderedCss, marginCss, flexBoxCss, sizeCss, fontStyleCss, paddingCss, cursorCss, fitCss, pointerEventsCss};

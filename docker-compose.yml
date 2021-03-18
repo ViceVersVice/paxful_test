@@ -3,11 +3,8 @@ services:
   web:
     build:
       context: ./btc_trade
-#    command: bash -c "cd got_api && gunicorn --workers 7 got_api.wsgi:application --bind 0.0.0.0:8000"
     expose:
       - 8000
-#    volumes:
-#      - static_volume:/srv/python-code-test/got_api/static
     ports:
     - 8000:8000
     depends_on:
@@ -16,7 +13,6 @@ services:
       - env_web.dev
       - env_postgres.dev
 
-  # sample RDBMS
   database:
     image: postgres:13
     volumes:
@@ -24,15 +20,5 @@ services:
     env_file:
       - env_postgres.dev
 
-#  nginx:
-#    build: ./nginx
-#    ports:
-#      - 80:80
-#    volumes:
-#      - static_volume:/static
-#    depends_on:
-#      - web
-
 volumes:
   postgres_storage:
-#  static_volume:

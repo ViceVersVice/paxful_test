@@ -1,1 +1,1 @@
-from .fixtures import crypto_currency_rate_factory
+from .fixtures import cryptocurrency_rate_factory

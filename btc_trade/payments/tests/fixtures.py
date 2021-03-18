@@ -1,14 +1,12 @@
-import uuid
-
 import pytest
 
-from payments.models import CryptoCurrencyRate
+from payments.models import CryptoCurrency
 
 
 @pytest.fixture
-def crypto_currency_rate_factory():
-    def _create(**kwargs) -> CryptoCurrencyRate:
-        crypto_rate, created = CryptoCurrencyRate.objects.get_or_create(type=CryptoCurrencyRate.BTC, usd=100, eur=200)
+def cryptocurrency_rate_factory():
+    def _create(**kwargs) -> CryptoCurrency:
+        crypto_rate, created = CryptoCurrency.objects.get_or_create(type=CryptoCurrency.BTC, usd=100)
         return crypto_rate
 
     return _create

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { render } from 'react-dom'
-import { BaseDiv, BaseSpan,  BaseFlexDiv, BaseInlineFlexDiv } from '../baseStyledComponents/components.js'
+import { BaseFlexDiv, BaseInlineFlexDiv } from '../baseStyledComponents/components.js'
 
 import { TradeList } from './tradesList.js'
 import { Chat } from './chat.js'
@@ -15,9 +14,6 @@ const fetchTradeDetailsInfo = (tradeId) => {
 
 const MainPage = () => {
     const [tradeDetailsData, setTradeDetailsData] = useState(null)
-
-    console.log("DET DATA::", tradeDetailsData)
-
 
     const getTradeInfoDetailsAction = (tradeId) => {
         return e => {

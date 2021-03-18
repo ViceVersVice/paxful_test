@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { BaseDiv, BaseFlexDiv, BaseInlineFlexDiv, BaseSpan } from "../baseStyledComponents/components"
+import { BaseInlineFlexDiv, BaseSpan } from "../baseStyledComponents/components"
 
 
 const TradeListItem = (props) => {
@@ -27,7 +27,7 @@ const TradeListItem = (props) => {
             
             <BaseInlineFlexDiv flexDirection={'column'} justifyContent={'space-between'}>
                 <BaseSpan>{data.amount}</BaseSpan>
-                <BaseSpan>{data.crypto_currency}</BaseSpan>
+                <BaseSpan>{data.cryptocurrency}</BaseSpan>
                 <BaseSpan>{data.payment_method}</BaseSpan>
                 <BaseSpan>{data.status}</BaseSpan>
                 <BaseSpan>{data.buyer}</BaseSpan>
@@ -58,14 +58,13 @@ const TradeDetailInfo = (props) => {
                     <BaseSpan><strong>Cryptocurrency amount:</strong></BaseSpan>
                     <BaseSpan><strong>Payment method:</strong></BaseSpan>
                     <BaseSpan><strong>Payment status:</strong></BaseSpan>
-                    <BaseSpan><strong>Buyers:</strong></BaseSpan>
+                    <BaseSpan><strong>Buyer:</strong></BaseSpan>
                     <BaseSpan><strong>Buyer reputation:</strong></BaseSpan>
-                    <BaseSpan><strong>Crypto amount:</strong></BaseSpan>
                 </BaseInlineFlexDiv>
                 
                 <BaseInlineFlexDiv flexDirection={'column'} justifyContent={'space-around'} key={2}>
                     <BaseSpan>{data.amount}</BaseSpan>
-                    <BaseSpan>{`${data.crypto_currency_amount} ${data.crypto_currency}`}</BaseSpan>
+                    <BaseSpan>{`${data.cryptocurrency_amount} ${data.cryptocurrency}`}</BaseSpan>
                     <BaseSpan>{data.payment_method}</BaseSpan>
                     <BaseSpan>{data.status}</BaseSpan>
                     <BaseSpan>{data.buyer}</BaseSpan>
