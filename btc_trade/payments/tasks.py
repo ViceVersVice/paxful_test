@@ -4,7 +4,7 @@ from payments.models import CryptoCurrency
 
 
 def update_currency_rate():
-    """Should run as beat"""
+    """Probably should run in background as celery beat"""
 
     BTC_USD_API_URL = 'https://api.pro.coinbase.com/products/BTC-USD/ticker'
     btc_usd_rate = requests.get(BTC_USD_API_URL).json().get('price')
