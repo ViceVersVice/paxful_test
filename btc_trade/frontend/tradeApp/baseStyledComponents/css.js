@@ -6,6 +6,7 @@ const backgroundCss = css`
     background: ${props => props.background || props.theme.background};
 `
 
+
 const fontStyleCss = css`
     font-family: ${props => props.fontFamily || props.theme.fontFamily };
     font-size: ${props => props.fontSize || props.theme.fontSize};
@@ -25,6 +26,7 @@ const borderedCss = css`
     border-top: ${props => props.borderTop};
     box-shadow: ${props => props.boxShadow};
 `
+
 
 const marginCss = css`
     margin: ${props => props.margin || ''};
@@ -67,6 +69,7 @@ const flexBoxCss = css`
     flex-wrap: ${props => props.flexWrap || 'nowrap'};
 `
 
+
 const fitCss = css`
     object-fit: ${props => props.objectFit}
 `
@@ -75,6 +78,7 @@ const fitCss = css`
 const cursorCss = css`
     cursor: ${props => props.cursor}
 `
+
 
 const pointerEventsCss = css`
     pointer-events: ${props => props.pointerEvents || props.theme.pointerEvents || 'auto'}

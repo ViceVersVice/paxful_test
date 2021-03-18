@@ -19,6 +19,7 @@ const BaseFlexDiv = styled(BaseDiv)`
     display: flex;
 `
 
+
 const BaseInlineFlexDiv = styled(BaseDiv)`
     display: inline-flex;
 `
@@ -31,6 +32,7 @@ const BaseSpan = styled.span`
     ${pointerEventsCss};
 `
 
+
 const BaseInput = styled.input`
     ${marginCss};
     ${backgroundCss};
@@ -41,5 +43,6 @@ const BaseInput = styled.input`
     ${pointerEventsCss};
     box-sizing: border-box;
 `
+
 
 export { BaseDiv, BaseSpan, BaseFlexDiv, BaseInlineFlexDiv, BaseInput}

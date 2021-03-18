@@ -20,7 +20,6 @@ const TradeList = (props) => {
         })
     }
 
-
     useEffect(
         () => {
             if(!tradesData.length){

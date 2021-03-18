@@ -24,7 +24,6 @@ const TradeListItem = (props) => {
                 <BaseSpan><strong>Buyers:</strong></BaseSpan>
                 <BaseSpan><strong>Buyer reputation:</strong></BaseSpan>
             </BaseInlineFlexDiv>
-            
             <BaseInlineFlexDiv flexDirection={'column'} justifyContent={'space-between'}>
                 <BaseSpan>{data.amount}</BaseSpan>
                 <BaseSpan>{data.cryptocurrency}</BaseSpan>
@@ -33,7 +32,6 @@ const TradeListItem = (props) => {
                 <BaseSpan>{data.buyer}</BaseSpan>
                 <BaseSpan>{data.buyer_reputation}</BaseSpan>
             </BaseInlineFlexDiv>
-             
         </BaseInlineFlexDiv>
     )
 }
@@ -48,7 +46,6 @@ const TradeDetailInfo = (props) => {
         width: '100%',
         padding: '2% 20% 2% 2%'
     }
-
     
     return (
         <ThemeProvider theme={{ fontSize: '30px'}}>
@@ -61,7 +58,6 @@ const TradeDetailInfo = (props) => {
                     <BaseSpan><strong>Buyer:</strong></BaseSpan>
                     <BaseSpan><strong>Buyer reputation:</strong></BaseSpan>
                 </BaseInlineFlexDiv>
-                
                 <BaseInlineFlexDiv flexDirection={'column'} justifyContent={'space-around'} key={2}>
                     <BaseSpan>{data.amount}</BaseSpan>
                     <BaseSpan>{`${data.cryptocurrency_amount} ${data.cryptocurrency}`}</BaseSpan>
@@ -72,7 +68,6 @@ const TradeDetailInfo = (props) => {
                 </BaseInlineFlexDiv>
             </BaseInlineFlexDiv>
         </ThemeProvider>
-        
     )
 }
 

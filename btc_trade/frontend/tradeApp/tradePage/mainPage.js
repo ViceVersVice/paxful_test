@@ -39,7 +39,6 @@ const MainPage = () => {
                 
             </BaseFlexDiv>
         </ThemeProvider>
-        
     )
 }
 
