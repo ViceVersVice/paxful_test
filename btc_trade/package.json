@@ -1,0 +1,17 @@
+{
+  "name": "btc_trade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "copy_trade_app": "rm -Rf trade/static/js && mkdir -p trade/static/js && cp -Rfa frontend/tradeApp/dist/. trade/static/js/",
+    "build": "cd frontend/tradeApp && npm install && npm run build && cd ../.. && npm run copy_trade_app",
+    "watch_by_webpack": "cd frontend/tradeApp && npm install && npm run watch",
+    "watch": "watch 'npm run copy_trade_app' ./frontend/tradeApp/dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "watch": "^1.0.2"
+  }
+}
